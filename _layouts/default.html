@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-　　<html>
+<html>
 　　<head>
 　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-　　　　<title>{{ page.title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+　　　　<title></title>
+   	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection" />
 　　</head>
 　　<body>
-
-　　　　{{ content }}
-
+	<div class="l-side">
+		<ul class="l-nav">
+			<li><a href="">CSS</a></li>
+			<li><a href="">Javascript</a></li>		
+		</ul>
+		<header class="banner">
+			<div class="header-avatar"><img src="" alt=""></div>
+			<h1 class="site-name">curly Cheng</h1>
+			<ul class="links">
+				<li><a href="">blog</a></li>
+				<li><a href="">paint</a></li>
+				<li><a href="">write</a></li>
+				<li><a href="">about</a></li>
+			</ul>
+		</header>
+	</div>
+	<div class="l-content">
+		<div class="inner">	
+			{{content}}
+		</div>
+	</div>
 　　</body>
 </html>

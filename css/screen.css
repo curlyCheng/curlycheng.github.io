@@ -1,0 +1,160 @@
+/* Reset */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  font: 16px/1.2 Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: black;
+}
+
+a:visited {
+  color: #a0a;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+
+/******************************************/
+/*    SideBar Style    */
+/******************************************/
+.l-side {
+  position: fixed;
+  width: 20%;
+  top: 0;
+  left: 0;
+  right: 70%;
+  bottom: 0;
+  background: #435a6b;
+  border-right: 1px solid #304759;
+}
+
+.l-nav {
+    padding-top: 4em;
+}
+
+.l-nav li{
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+.l-nav li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.banner{
+  position: absolute;
+  width: 90%;
+  height: auto;
+  left: 0;
+  right: auto;
+  bottom: 10px;
+  padding: 50px 5%;
+  word-wrap: break-word;
+}
+.banner .links li {
+  display: inline;
+  font-style: italic;
+}
+.banner .links li:after {
+  content: " .";
+}
+.banner .links a {
+  color: #ccc;
+  text-decoration: none;  
+}
+.banner .links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .l-side {
+    width: 100%;
+    display: none; 
+  }
+  .l-nav {
+    padding-top: 1em;
+  }
+  .l-nav li {
+    font-size: 1em;
+  }
+}
+
+/******************************************/
+/*    Content Style    */
+/******************************************/
+.l-content {
+  margin-left: 20%;
+  margin-right: 0;
+  width: auto;
+}
+.l-content .inner {
+  padding: 50px;
+}
+
+@media (max-width: 767px) {
+  .l-content {
+    margin: 0;
+  }
+  .l-content .inner {
+    padding: 25px;
+  }
+}
+
+/**Post**/
+article h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+  word-wrap: break-word;
+}
+
+article .post-date {
+  color: #ccc;
+}
+
+article .body {
+  margin-top: 20px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  text-align: justify;
+}
