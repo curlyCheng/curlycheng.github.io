@@ -1,0 +1,29 @@
+# Site config
+title: curly's blog
+author: curly Cheng
+
+# Blog-Nav config
+blog-nav:
+  - text: Timeline
+    url: /index.html
+  - text: Categories 
+    url: /categories.html
+  - text: Archives
+    url: /archives.html
+  - text: Tags
+    url: /tags.html
+  - text: Projects
+    url: /projects.html
+
+# Site-nav config
+site-nav:
+  - text: Blog
+    url: /index.html
+  - text: Paint 
+    url: /paint.html
+  - text: Write
+    url: /write.html
+  - text: About
+    url: /about.html
+
+

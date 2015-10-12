@@ -1,0 +1,38 @@
+---
+layout: tl-mode
+title: Archives
+---
+{% assign now = 'now' | date: '%Y' %}
+{% assign last = site.posts | last %}
+{% assign start = last.date | date: '%Y' %}
+<div class="cate-nav">
+	<ul>	
+		{% for i in (start..now) %}
+			<li><a href="#{{i}}">{{i}}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<div class="post-list">
+	{% assign year = now %}
+	<section>
+		<h2 class="cate-title" id="{{year}}">{{year}}</h2>
+		<ul>
+	{% for post in site.posts %}
+	{% assign post-year = post.date | date: '%Y' %}
+	{% if year != post-year %}
+	{% assign year = post-year %}
+		</ul>
+	</section>
+	<div class="hr"></div>
+	<section>
+		<h2 class="cate-title" id="{{year}}">{{year}}</h2>
+		<ul>
+			<li><span>{{ post.date | date: "%Y.%m.%d" }}</span><a href="{{post.url}}">{{post.title}}</a></li>
+	{% else %}
+			<li><span>{{ post.date | date: "%b.%d" }}</span><a href="{{post.url}}">{{post.title}}</a></li>
+	{% endif %}
+	{% endfor %}
+	</ul>
+	</section>
+	<div class="hr"></div>
+</div>

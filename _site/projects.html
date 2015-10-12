@@ -3,33 +3,53 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% if page.title %}{{page.title}}{% else %}{{ site.title }}{% endif %}</title>
+	<title>curly's blog</title>
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body>
 	<div class="l-side" id="sidebar">
 		<ul class="l-nav">
-			{% for nav in site.blog-nav %}
-			{% if page.url == nav.url %}
-			<li><a href="{{nav.url}}" class="l-nav-active">{{nav.text}}</a></li>
-			{% else %}
-			<li><a href="{{nav.url}}">{{nav.text}}</a></li>			
-			{% endif %}
-			{% endfor %}		
+			
+			
+			<li><a href="/index.html">Timeline</a></li>			
+			
+			
+			
+			<li><a href="/categories.html">Categories</a></li>			
+			
+			
+			
+			<li><a href="/archives.html">Archives</a></li>			
+			
+			
+			
+			<li><a href="/tags.html">Tags</a></li>			
+			
+			
+			
+			<li><a href="/projects.html" class="l-nav-active">Projects</a></li>
+			
+					
 		</ul>
 		<header class="banner">
 			<div class="header-avatar"><img src="" alt=""></div>
-			<h1 class="site-name">{{site.author}}</h1>
+			<h1 class="site-name">curly Cheng</h1>
 			<ul class="links">
-				{% for link in site.site-nav %}
-				<li><a href="{{link.url}}">{{link.text}}</a></li>
-				{% endfor %}
+				
+				<li><a href="/blog.html">Blog</a></li>
+				
+				<li><a href="/paint.html">Paint</a></li>
+				
+				<li><a href="/write.html">Write</a></li>
+				
+				<li><a href="/about.html">About</a></li>
+				
 			</ul>
 		</header>
 	</div>
 	<div id="nav-icon">+</div>
 	<div class="l-content">
-		{{content}}
+		
 	</div>
 
 	<script>

@@ -1,0 +1,25 @@
+---
+layout: tl-mode
+title: Category
+---
+<div class="cate-nav tl">
+	<ul>
+		{% for cate in site.categories %}
+		<li><a href="#{{cate[0]}}">{{cate[0] | upcase}}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<div class="post-list tl">
+	{% for cate in site.categories %}
+	<section>
+		<h2 class="cate-title" id="{{cate[0]}}">{{cate[0] | upcase}}</h2>
+		<ul>	
+			{% for post in cate[1] %}
+				<li><span>{{ post.date | date: "%Y.%m.%d" }}</span><a href="{{post.url}}">{{post.title}}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+	<div class="hr"></div>
+	{% endfor %}	
+</div>
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>curlyCheng's blog</title>
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	<div class="l-side" id="sidebar">
+		<ul class="l-nav">
+			
+			
+			<li><a href="/index.html" class="l-nav-active">Timeline</a></li>
+			
+			
+			
+			<li><a href="/categories.html">Categories</a></li>			
+			
+			
+			
+			<li><a href="/archives.html">Archives</a></li>			
+			
+			
+			
+			<li><a href="/tags.html">Tags</a></li>			
+			
+			
+			
+			<li><a href="/projects.html">Projects</a></li>			
+			
+					
+		</ul>
+		<header class="banner">
+			<div class="header-avatar"><img src="" alt=""></div>
+			<h1 class="site-name">curly Cheng</h1>
+			<ul class="links">
+				
+				<li><a href="/blog.html">Blog</a></li>
+				
+				<li><a href="/paint.html">Paint</a></li>
+				
+				<li><a href="/write.html">Write</a></li>
+				
+				<li><a href="/about.html">About</a></li>
+				
+			</ul>
+		</header>
+	</div>
+	<div id="nav-icon">+</div>
+	<div class="l-content">
+		<div class="inner">
+	
+		<article>
+	<header>
+		<a href="/javascript/2015/10/12/second-test.html"><h2>测试文章2</h2></a>
+		<span class="post-date">2015.10.12</span>			
+	</header>
+	<div class="excerpt">
+		
+
+	</div>
+	<div class="hr"></div>
+</article>
+	
+		<article>
+	<header>
+		<a href="/css/2015/10/08/hello-blog.html"><h2>我所知道的几种display:table-cell的应用</h2></a>
+		<span class="post-date">2015.10.08</span>			
+	</header>
+	<div class="excerpt">
+		<blockquote>
+  <p>从今年开始，小米、魅族等手机厂商也已经开始出售商店内的广告位。甚至连小米的新闻合作伙伴一点资讯都将广告位交给小米一并发售。</p>
+</blockquote>
+
+
+	</div>
+	<div class="hr"></div>
+</article>
+		
+</div>
+
+	</div>
+
+	<script>
+		var $nav = document.getElementById("nav-icon");
+		var $sidebar = document.getElementById("sidebar");
+		$sidebar.show = false;
+		$nav.onclick = function(){
+			if ($sidebar.show) {
+				$sidebar.style.display = "none";
+				$sidebar.show = false;
+				$nav.innerText = "+";
+			} else {
+				$sidebar.style.display = "block";
+				$sidebar.show = true;
+				$nav.innerText = "×";
+			}
+		}
+	</script>
+</body>
+</html>

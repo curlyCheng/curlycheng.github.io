@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>curly's blog</title>
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	<div class="l-side" id="sidebar">
+		<ul class="l-nav">
+			
+			
+			<li><a href="/index.html">Timeline</a></li>			
+			
+			
+			
+			<li><a href="/categories.html">Categories</a></li>			
+			
+			
+			
+			<li><a href="/archives.html">Archives</a></li>			
+			
+			
+			
+			<li><a href="/tags.html" class="l-nav-active">Tags</a></li>
+			
+			
+			
+			<li><a href="/projects.html">Projects</a></li>			
+			
+					
+		</ul>
+		<header class="banner">
+			<div class="header-avatar"><img src="" alt=""></div>
+			<h1 class="site-name">curly Cheng</h1>
+			<ul class="links">
+				
+				<li><a href="/blog.html">Blog</a></li>
+				
+				<li><a href="/paint.html">Paint</a></li>
+				
+				<li><a href="/write.html">Write</a></li>
+				
+				<li><a href="/about.html">About</a></li>
+				
+			</ul>
+		</header>
+	</div>
+	<div id="nav-icon">+</div>
+	<div class="l-content">
+		<div class="inner">
+	<div class="cate-nav tl">
+		<ul>
+			
+				
+				<li><a href="#css">CSS</a></li>
+				
+			
+				
+				<li><a href="#display">DISPLAY</a></li>
+				
+			
+				
+				<li><a href="#table-cell">TABLE-CELL</a></li>
+				
+			
+				
+				<li><a href="#javascript">JAVASCRIPT</a></li>
+				
+			
+		</ul>
+	</div>
+</div>
+	</div>
+
+	<script>
+		var $nav = document.getElementById("nav-icon");
+		var $sidebar = document.getElementById("sidebar");
+		$sidebar.show = false;
+		$nav.onclick = function(){
+			if ($sidebar.show) {
+				$sidebar.style.display = "none";
+				$sidebar.show = false;
+				$nav.innerText = "+";
+			} else {
+				$sidebar.style.display = "block";
+				$sidebar.show = true;
+				$nav.innerText = "×";
+			}
+		}
+	</script>
+</body>
+</html>

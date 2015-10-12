@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archives</title>
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	<div class="l-side" id="sidebar">
+		<ul class="l-nav">
+			
+			
+			<li><a href="/index.html">Timeline</a></li>			
+			
+			
+			
+			<li><a href="/categories.html">Categories</a></li>			
+			
+			
+			
+			<li><a href="/archives.html" class="l-nav-active">Archives</a></li>
+			
+			
+			
+			<li><a href="/tags.html">Tags</a></li>			
+			
+			
+			
+			<li><a href="/projects.html">Projects</a></li>			
+			
+					
+		</ul>
+		<header class="banner">
+			<div class="header-avatar"><img src="" alt=""></div>
+			<h1 class="site-name">curly Cheng</h1>
+			<ul class="links">
+				
+				<li><a href="/blog.html">Blog</a></li>
+				
+				<li><a href="/paint.html">Paint</a></li>
+				
+				<li><a href="/write.html">Write</a></li>
+				
+				<li><a href="/about.html">About</a></li>
+				
+			</ul>
+		</header>
+	</div>
+	<div id="nav-icon">+</div>
+	<div class="l-content">
+		<div class="inner tl">
+	
+
+
+<div class="cate-nav">
+	<ul>	
+		
+			<li><a href="#2015">2015</a></li>
+		
+	</ul>
+</div>
+<div class="post-list">
+	
+	<section>
+		<h2 class="cate-title" id="2015">2015</h2>
+		<ul>
+	
+	
+	
+			<li><span>Oct.12</span><a href="/javascript/2015/10/12/second-test.html">测试文章2</a></li>
+	
+	
+	
+	
+			<li><span>Oct.08</span><a href="/css/2015/10/08/hello-blog.html">我所知道的几种display:table-cell的应用</a></li>
+	
+	
+	</ul>
+	</section>
+	<div class="hr"></div>
+</div>
+
+</div>
+	</div>
+
+	<script>
+		var $nav = document.getElementById("nav-icon");
+		var $sidebar = document.getElementById("sidebar");
+		$sidebar.show = false;
+		$nav.onclick = function(){
+			if ($sidebar.show) {
+				$sidebar.style.display = "none";
+				$sidebar.show = false;
+				$nav.innerText = "+";
+			} else {
+				$sidebar.style.display = "block";
+				$sidebar.show = true;
+				$nav.innerText = "×";
+			}
+		}
+	</script>
+</body>
+</html>

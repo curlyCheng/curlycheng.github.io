@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我所知道的几种display:table-cell的应用</title>
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body>
+	<div class="l-side" id="sidebar">
+		<ul class="l-nav">
+			
+			
+			<li><a href="/index.html">Timeline</a></li>			
+			
+			
+			
+			<li><a href="/categories.html">Categories</a></li>			
+			
+			
+			
+			<li><a href="/archives.html">Archives</a></li>			
+			
+			
+			
+			<li><a href="/tags.html">Tags</a></li>			
+			
+			
+			
+			<li><a href="/projects.html">Projects</a></li>			
+			
+					
+		</ul>
+		<header class="banner">
+			<div class="header-avatar"><img src="" alt=""></div>
+			<h1 class="site-name">curly Cheng</h1>
+			<ul class="links">
+				
+				<li><a href="/blog.html">Blog</a></li>
+				
+				<li><a href="/paint.html">Paint</a></li>
+				
+				<li><a href="/write.html">Write</a></li>
+				
+				<li><a href="/about.html">About</a></li>
+				
+			</ul>
+		</header>
+	</div>
+	<div id="nav-icon">+</div>
+	<div class="l-content">
+		<div class="inner">
+	<article>
+		<header>
+			<h1>我所知道的几种display:table-cell的应用</h1>
+			<span class="post-date underline">Oct 08, 2015</span>	
+		</header>
+		<div class="body">
+			<blockquote>
+  <p>从今年开始，小米、魅族等手机厂商也已经开始出售商店内的广告位。甚至连小米的新闻合作伙伴一点资讯都将广告位交给小米一并发售。</p>
+</blockquote>
+
+<h2 id="section">但一览能成为豌豆荚的未来么？</h2>
+
+<p><a href="http:baidu.com">123</a>
+从今年开始，小米、魅族等手机厂商也已经开始出售商店内的广告位。甚至连小米的新闻合作伙伴一点资讯都将广告位交给小米一并发售。</p>
+
+<p>像豌豆荚一样的独立商店，如今只剩一些巨头：依靠搜索获取用户的百度；靠微信获取用户的腾讯应用宝；以及靠手机助手获取用户的 360 。豌豆荚面对的竞争压力是越来越大了。</p>
+
+<p>这家年轻的公司从创立之初便专注于一般认为只有硬件或者系统厂商才能做好的事。2009 年推出的管理工具可以认为是 Android 的 iTunes，之后的应用商店则希望成为国内版的 Google Play。</p>
+
+<p>但每一次，豌豆荚都更早地进入市场、在巨头们反应过来之前获取大量用户。自 2009 年以来，豌豆荚的团队规模已从刚成立的十余个人，成长为今天的 400 多人，到去年 3 月的最新一轮融资，豌豆荚的估值据称已经超过 10 亿美元。</p>
+
+<p>像之前每一次的选择一样，一览最终也会面对强大的竞争对手——不论一览的未来是一个阅读产品，还是应用搜索的入口。这一次，一览能让“索引应用信息”成为豌豆荚的未来么？</p>
+
+<p><code>function func () {
+	var a = 1;
+	console.log(a);
+}</code></p>
+
+		</div>
+	</article>	
+</div>
+
+	</div>
+
+	<script>
+		var $nav = document.getElementById("nav-icon");
+		var $sidebar = document.getElementById("sidebar");
+		$sidebar.show = false;
+		$nav.onclick = function(){
+			if ($sidebar.show) {
+				$sidebar.style.display = "none";
+				$sidebar.show = false;
+				$nav.innerText = "+";
+			} else {
+				$sidebar.style.display = "block";
+				$sidebar.show = true;
+				$nav.innerText = "×";
+			}
+		}
+	</script>
+</body>
+</html>
