@@ -1,3 +1,6 @@
+markdown: rdiscount
+highlighter: pygments
+
 # Site config
 title: curly's blog
 author: curly Cheng

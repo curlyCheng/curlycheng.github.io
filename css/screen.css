@@ -177,7 +177,7 @@ article header .post-date {
   padding-bottom: 10px;
 }
 
-article .body {
+article .body{
   line-height: 30px;
   margin-top: 40px;
   font-size: 16px;
@@ -185,6 +185,9 @@ article .body {
   letter-spacing: normal;
   word-wrap: break-word;
   word-break: break-word;
+  text-align: justify;
+}
+article .excerpt {
   text-align: justify;
 }
 article .body > * {
@@ -227,7 +230,6 @@ article .body embed {
 }
 article .body span,
 article .body p,
-article .body pre,
 article .body b,
 article .body i,
 article .body blockquote,
@@ -260,6 +262,14 @@ article .body h6 {
   text-align: left !important;
   margin-top: 28px !important;
   margin-bottom: 14px !important;
+}
+article .body pre {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #535F70;
+  font-size: 12px;
+  line-height: 2em;
 }
 
 
@@ -323,4 +333,11 @@ article .body h6 {
   #nav-icon {
     display: block;
   }
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #89C3C0;
+  margin-left: 0;
 }

@@ -1,14 +1,12 @@
 ---
-layout: default
+layout: tj-mode
 ---
-<div class="inner">
-	<div class="cate-nav tl">
-		<ul>
-			{% for tags in site.tags %}
-				{% for tag in tags[0] %}
-				<li><a href="#{{tag}}">{{tag | upcase}}</a></li>
-				{% endfor %}
+<div class="cate-nav tl">
+	<ul>
+		{% for tags in site.tags %}
+			{% for tag in tags[0] %}
+			<li><a href="#{{tag}}">{{tag | upcase}}</a></li>
 			{% endfor %}
-		</ul>
-	</div>
+		{% endfor %}
+	</ul>
 </div>

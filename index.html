@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: tj-mode
 title: curlyCheng's blog
 ---
-<div class="inner">
-	{% for post in site.posts %}
-		{% include excerpt.html %}
-	{% endfor %}	
-</div>
+{% for post in site.posts %}
+	{% include excerpt.html %}
+{% endfor %}
