@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% if page.title %}{{page.title}}{% else %}{{ site.title }}{% endif %}</title>
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/css/pygments.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body>
 	<div class="l-side" id="sidebar">
@@ -18,7 +19,6 @@
 			{% endfor %}		
 		</ul>
 		<header class="banner">
-			<div class="header-avatar"><img src="" alt=""></div>
 			<h1 class="site-name">{{site.author}}</h1>
 			<ul class="links">
 				{% for link in site.site-nav %}

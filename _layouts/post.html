@@ -1,5 +1,5 @@
 ---
-layout: tj-mode
+layout: mode
 ---
 <article>
 	<header>
@@ -7,7 +7,7 @@ layout: tj-mode
 		<span class="post-date underline">{{ page.date | date: "%b %d, %Y" }}</span>	
 	</header>
 	<div class="body">
-		{{content}}
+		{{ content | toc_generate }}
 	</div>
 	<div class="hr"></div>
 	<div class="footer">标签：

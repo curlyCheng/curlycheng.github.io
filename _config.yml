@@ -1,5 +1,19 @@
-markdown: rdiscount
 highlighter: pygments
+# markdown: redcarpet
+# redcarpet:
+#     extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough","with_toc_data"]
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+#   use_coderay: true
+#   syntax_highlighter: rouge
+#   coderay:
+#     coderay_line_numbers:  nil
 
 # Site config
 title: curly's blog
@@ -28,5 +42,6 @@ site-nav:
     url: /write.html
   - text: About
     url: /about.html
+
 
 

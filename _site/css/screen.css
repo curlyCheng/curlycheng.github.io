@@ -178,7 +178,6 @@ article header .post-date {
 }
 
 article .body{
-  line-height: 30px;
   margin-top: 40px;
   font-size: 16px;
   line-height: 32px;
@@ -187,14 +186,8 @@ article .body{
   word-break: break-word;
   text-align: justify;
 }
-article .excerpt {
-  text-align: justify;
-}
 article .body > * {
   margin-bottom: 24px;
-}
-article .body pre {
-  white-space: normal;
 }
 article .body a {
   text-decoration: none;
@@ -206,7 +199,7 @@ article .body a:hover {
   text-decoration: underline;
 }
 article .body blockquote {
-  background: #ddd; 
+  background: #e7e7e7; 
   margin: 20px 0 !important;
   padding: 10px 16px;
 }
@@ -217,9 +210,21 @@ article .body img {
   height: auto;
   max-width: 100% !important;
 }
-article .body ul {
-  list-style: initial;
+article .body ul { 
   padding-left: 20px;
+}
+
+article .body ul li {
+  list-style-type: disc;
+}
+article .body ul ul li {
+  list-style-type: circle;
+}
+article .body ul ul ul li {
+  list-style-type: square;
+}
+article .body ol li {
+  list-style-type: decimal;
 }
 article .body iframe,
 article .body embed {
@@ -228,7 +233,6 @@ article .body embed {
   max-width: 100% !important;
   margin: 0 auto;
 }
-article .body span,
 article .body p,
 article .body b,
 article .body i,
@@ -256,19 +260,33 @@ article .body h6 {
   border-left: 5px solid #0099cc !important;
   color: #363636 !important;
   padding-left: 15px !important;
-  font-size: 24px !important;
-  line-height: 32px !important;
+  line-height: 1.5;
   font-weight: bold !important;
   text-align: left !important;
   margin-top: 28px !important;
   margin-bottom: 14px !important;
+}
+article .body h1{
+  font-size: 2.3em;
+}
+article .body h2{
+  font-size: 1.5em;
+}
+article .body h3 {
+  font-size: 1.25em;
+}
+article .body h4 {
+  font-size: 1.125em;
+}
+article .body h5 {
+  font-size: 1em;
 }
 article .body pre {
   padding: 1em;
   border: 1px solid #ccc;
   border-radius: 10px;
   color: #535F70;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 2em;
 }
 
