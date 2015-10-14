@@ -1,8 +1,9 @@
+# Base Config
+permalink: /:categories/:title.html
 highlighter: pygments
 # markdown: redcarpet
 # redcarpet:
 #     extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough","with_toc_data"]
-
 markdown: kramdown
 kramdown:
   input: GFM
@@ -18,6 +19,7 @@ kramdown:
 # Site config
 title: curly's blog
 author: curly Cheng
+img_dir: /images
 
 # Blog-Nav config
 blog-nav:
@@ -42,6 +44,8 @@ site-nav:
     url: /write.html
   - text: About
     url: /about.html
+
+
 
 
 

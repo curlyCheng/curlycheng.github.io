@@ -33,19 +33,38 @@
 	</div>
 
 	<script>
-		var $nav = document.getElementById("nav-icon");
-		var $sidebar = document.getElementById("sidebar");
-		$sidebar.show = false;
-		$nav.onclick = function(){
-			if ($sidebar.show) {
-				$sidebar.style.display = "none";
-				$sidebar.show = false;
-				$nav.innerText = "+";
-			} else {
-				$sidebar.style.display = "block";
-				$sidebar.show = true;
-				$nav.innerText = "×";
+		function navIconToggle() {
+			var $nav = document.getElementById("nav-icon");
+			var $sidebar = document.getElementById("sidebar");
+			$sidebar.show = false;
+			$nav.onclick = function(){
+				if ($sidebar.show) {
+					$sidebar.style.display = "none";
+					$sidebar.show = false;
+					$nav.innerText = "+";
+				} else {
+					$sidebar.style.display = "block";
+					$sidebar.show = true;
+					$nav.innerText = "×";
+				}
 			}
+		}
+
+		function setTargetBlank() {
+			var $anchors = document.getElementsByTagName("a");
+			var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			var reg=new RegExp(Expression);
+			for ( var i = 0, len = $anchors.length; i < len; i++ ) {
+				var $anchor = $anchors[i]
+				if (reg.test($anchor.href)) {
+					$anchor.target = "_blank";
+				}
+			}
+		}
+
+		window.onload = function() {
+			navIconToggle();
+			// setTargetBlank();
 		}
 	</script>
 </body>

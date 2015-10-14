@@ -68,12 +68,17 @@
 	
 	
 	
-			<li><span>Oct.12</span><a href="/%E6%AF%8F%E6%97%A5%E6%83%8A%E5%A5%87/2015/10/12/use-jekyll-build-blog.html">使用jekyll和github pages建立博客</a></li>
+			<li><span>Oct.14</span><a href="/css/pic-css-box-model.html">图解CSS(一)——盒模型</a></li>
 	
 	
 	
 	
-			<li><span>Oct.12</span><a href="/ror/2015/10/12/ruby-rails-install.html">Ruby&Rails ubuntu下安装</a></li>
+			<li><span>Oct.12</span><a href="/%E6%AF%8F%E6%97%A5%E6%83%8A%E5%A5%87/use-jekyll-build-blog.html">使用jekyll和github pages建立博客</a></li>
+	
+	
+	
+	
+			<li><span>Oct.12</span><a href="/ror/ruby-rails-install.html">Ruby&Rails ubuntu下安装</a></li>
 	
 	
 	</ul>
@@ -85,19 +90,38 @@
 	</div>
 
 	<script>
-		var $nav = document.getElementById("nav-icon");
-		var $sidebar = document.getElementById("sidebar");
-		$sidebar.show = false;
-		$nav.onclick = function(){
-			if ($sidebar.show) {
-				$sidebar.style.display = "none";
-				$sidebar.show = false;
-				$nav.innerText = "+";
-			} else {
-				$sidebar.style.display = "block";
-				$sidebar.show = true;
-				$nav.innerText = "×";
+		function navIconToggle() {
+			var $nav = document.getElementById("nav-icon");
+			var $sidebar = document.getElementById("sidebar");
+			$sidebar.show = false;
+			$nav.onclick = function(){
+				if ($sidebar.show) {
+					$sidebar.style.display = "none";
+					$sidebar.show = false;
+					$nav.innerText = "+";
+				} else {
+					$sidebar.style.display = "block";
+					$sidebar.show = true;
+					$nav.innerText = "×";
+				}
 			}
+		}
+
+		function setTargetBlank() {
+			var $anchors = document.getElementsByTagName("a");
+			var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			var reg=new RegExp(Expression);
+			for ( var i = 0, len = $anchors.length; i < len; i++ ) {
+				var $anchor = $anchors[i]
+				if (reg.test($anchor.href)) {
+					$anchor.target = "_blank";
+				}
+			}
+		}
+
+		window.onload = function() {
+			navIconToggle();
+			// setTargetBlank();
 		}
 	</script>
 </body>

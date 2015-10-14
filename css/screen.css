@@ -257,7 +257,7 @@ article .body h6 {
   font-family: Tahoma, Arial, "Hiragino Sans GB", "冬青黑", "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", "Heiti", "黑体", sans-serif !important;
   display: block !important;
   background-color: transparent !important;
-  border-left: 5px solid #0099cc !important;
+  border-left: 0.3em solid #0099cc !important;
   color: #363636 !important;
   padding-left: 15px !important;
   line-height: 1.5;
@@ -288,6 +288,10 @@ article .body pre {
   color: #535F70;
   font-size: 13px;
   line-height: 2em;
+}
+code {
+  color: #535F70;
+  font-size: 13px;
 }
 
 

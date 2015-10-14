@@ -53,7 +53,22 @@
 	
 	<article>
 	<header>
-		<a href="/%E6%AF%8F%E6%97%A5%E6%83%8A%E5%A5%87/2015/10/12/use-jekyll-build-blog.html"><h2>使用jekyll和github pages建立博客</h2></a>
+		<a href="/css/pic-css-box-model.html"><h2>图解CSS(一)——盒模型</h2></a>
+		<span class="post-date">2015.10.14</span>			
+	</header>
+	<div class="excerpt">
+		<blockquote>
+  <p>本文将介绍css盒模型</p>
+</blockquote>
+
+
+	</div>
+	<div class="hr"></div>
+</article>
+
+	<article>
+	<header>
+		<a href="/%E6%AF%8F%E6%97%A5%E6%83%8A%E5%A5%87/use-jekyll-build-blog.html"><h2>使用jekyll和github pages建立博客</h2></a>
 		<span class="post-date">2015.10.12</span>			
 	</header>
 	<div class="excerpt">
@@ -68,7 +83,7 @@
 
 	<article>
 	<header>
-		<a href="/ror/2015/10/12/ruby-rails-install.html"><h2>Ruby&Rails ubuntu下安装</h2></a>
+		<a href="/ror/ruby-rails-install.html"><h2>Ruby&Rails ubuntu下安装</h2></a>
 		<span class="post-date">2015.10.12</span>			
 	</header>
 	<div class="excerpt">
@@ -86,19 +101,38 @@
 	</div>
 
 	<script>
-		var $nav = document.getElementById("nav-icon");
-		var $sidebar = document.getElementById("sidebar");
-		$sidebar.show = false;
-		$nav.onclick = function(){
-			if ($sidebar.show) {
-				$sidebar.style.display = "none";
-				$sidebar.show = false;
-				$nav.innerText = "+";
-			} else {
-				$sidebar.style.display = "block";
-				$sidebar.show = true;
-				$nav.innerText = "×";
+		function navIconToggle() {
+			var $nav = document.getElementById("nav-icon");
+			var $sidebar = document.getElementById("sidebar");
+			$sidebar.show = false;
+			$nav.onclick = function(){
+				if ($sidebar.show) {
+					$sidebar.style.display = "none";
+					$sidebar.show = false;
+					$nav.innerText = "+";
+				} else {
+					$sidebar.style.display = "block";
+					$sidebar.show = true;
+					$nav.innerText = "×";
+				}
 			}
+		}
+
+		function setTargetBlank() {
+			var $anchors = document.getElementsByTagName("a");
+			var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			var reg=new RegExp(Expression);
+			for ( var i = 0, len = $anchors.length; i < len; i++ ) {
+				var $anchor = $anchors[i]
+				if (reg.test($anchor.href)) {
+					$anchor.target = "_blank";
+				}
+			}
+		}
+
+		window.onload = function() {
+			navIconToggle();
+			// setTargetBlank();
 		}
 	</script>
 </body>

@@ -54,31 +54,39 @@
 	<ul>
 		
 			
-			<li><a href="#ruby">RUBY</a></li>
+			<li><a href="#ruby">Ruby</a></li>
 			
 		
 			
-			<li><a href="#rails">RAILS</a></li>
+			<li><a href="#rails">Rails</a></li>
 			
 		
 			
-			<li><a href="#install">INSTALL</a></li>
+			<li><a href="#install">Install</a></li>
 			
 		
 			
-			<li><a href="#jekyll">JEKYLL</a></li>
+			<li><a href="#jekyll">Jekyll</a></li>
 			
 		
 			
-			<li><a href="#github">GITHUB</a></li>
+			<li><a href="#git">Git</a></li>
 			
 		
 			
-			<li><a href="#git">GIT</a></li>
+			<li><a href="#blog">Blog</a></li>
 			
 		
 			
-			<li><a href="#blog">BLOG</a></li>
+			<li><a href="#css">Css</a></li>
+			
+		
+			
+			<li><a href="#position">Position</a></li>
+			
+		
+			
+			<li><a href="#margin">Margin</a></li>
 			
 		
 	</ul>
@@ -88,19 +96,38 @@
 	</div>
 
 	<script>
-		var $nav = document.getElementById("nav-icon");
-		var $sidebar = document.getElementById("sidebar");
-		$sidebar.show = false;
-		$nav.onclick = function(){
-			if ($sidebar.show) {
-				$sidebar.style.display = "none";
-				$sidebar.show = false;
-				$nav.innerText = "+";
-			} else {
-				$sidebar.style.display = "block";
-				$sidebar.show = true;
-				$nav.innerText = "×";
+		function navIconToggle() {
+			var $nav = document.getElementById("nav-icon");
+			var $sidebar = document.getElementById("sidebar");
+			$sidebar.show = false;
+			$nav.onclick = function(){
+				if ($sidebar.show) {
+					$sidebar.style.display = "none";
+					$sidebar.show = false;
+					$nav.innerText = "+";
+				} else {
+					$sidebar.style.display = "block";
+					$sidebar.show = true;
+					$nav.innerText = "×";
+				}
 			}
+		}
+
+		function setTargetBlank() {
+			var $anchors = document.getElementsByTagName("a");
+			var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			var reg=new RegExp(Expression);
+			for ( var i = 0, len = $anchors.length; i < len; i++ ) {
+				var $anchor = $anchors[i]
+				if (reg.test($anchor.href)) {
+					$anchor.target = "_blank";
+				}
+			}
+		}
+
+		window.onload = function() {
+			navIconToggle();
+			// setTargetBlank();
 		}
 	</script>
 </body>

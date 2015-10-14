@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用jekyll和github pages建立博客
-tag: [jekyll, github, git, blog]
+tag: [jekyll, git, blog]
 categories: [每日惊奇]
 ---
 > 在无域名且无服务器的情况下，如何建立一个实用的个人博客？结合github pages和jekyll可以产生一个不错的解决方案。在渴望拥有个人blog的欲望驱使下，搜寻到了该解决方案，摸索摸索，折腾折腾，人生第一个原生blog√。这篇日志将介绍jekyll的基本以及建立blog过程中觉得有必要记录的部分。
@@ -24,7 +24,7 @@ github pages可以理解为托管在github上的静态网页。github允许用�
 
 [Jekyll官方文档](http://jekyll.bootcss.com/docs/home/)+参考[使用 Jekyll 的站点](http://jekyll.bootcss.com/docs/sites/)，动手建立一个blog。
 
-Jekyll是使用ruby开发的一个套件，在本机使用Jekyll必然是需要ruby环境的，ruby安装参考另一篇博文[Ruby&Rails ubuntu下安装](/ror/2015/10/12/ruby-rails-install.html)。RubyGems是ruby的套件管理工具，在ruby安装时会附带安装上，有了这么一个工具安装ruby套件便十分简单了。
+Jekyll是使用ruby开发的一个套件，在本机使用Jekyll必然是需要ruby环境的，ruby安装参考另一篇博文[Ruby&Rails ubuntu下安装](/ror/ruby-rails-install.html)。RubyGems是ruby的套件管理工具，在ruby安装时会附带安装上，有了这么一个工具安装ruby套件便十分简单了。
 jekyll官方引擎和github Pages使用的jekyll引擎在解析方面有一些不同，避免预览效果和线上效果差异，可在本地安装github pages环境(包含jekyll)，参考[https://help.github.com/articles/using-jekyll-with-pages/](https://help.github.com/articles/using-jekyll-with-pages/)。
 
 ~~~~~~~~~~~~   
@@ -52,7 +52,7 @@ jekyll官方引擎和github Pages使用的jekyll引擎在解析方面有一些�
 
 #### Blog结构
 
-![Blog结构](/images/curly_blog.png)
+![Blog结构]({{site.img_dir}}{{page.dir}}/curly_blog.png)
 
 - _includes: 
 	- excerpt.html: 将文章摘要部分作为片段提出
@@ -83,14 +83,16 @@ cate in site.categories #=>cate是一个数组，cate[0]存放类目名，cate[1
 
 1. 可以理解为全局属性设定。可自定义内容，在页面中使用```site.xxx```。
 1. 修改_config.yml后需要重新启动jekyll才会生效。
+1. 更改post的url，比如设置为目录/文章.html，```
+permalink: /:categories/:title.html```
 
 #### markdown
 
 jekyll中可选择使用四种markdown解释器(将markdown内容翻译为HTML代码)，分别是maruku、rdiscount、redcarpet、kramdown
 
-* maruku： jekyll官方引擎默认的markdown解释器，支持扩展，对中文支持不佳,项目已停止维护，[语法地址](https://github.com/bhollis/maruku/blob/master/docs/markdown_syntax.md)。
+* maruku： jekyll官方引擎默认的markdown解释器，支持扩展，对中文支持不佳,项目已停止维护，[【语法地址】](https://github.com/bhollis/maruku/blob/master/docs/markdown_syntax.md)。
 
-* rdiscount： [支持扩展](http://dafoster.net/projects/rdiscount/)，语法参照[Discount](http://www.pell.portland.or.us/~orc/Code/discount/#Language.extensions) 
+* rdiscount： [【支持扩展】](http://dafoster.net/projects/rdiscount/)，语法参照[Discount](http://www.pell.portland.or.us/~orc/Code/discount/#Language.extensions) 
 	
 {% highlight ruby %}
 					
