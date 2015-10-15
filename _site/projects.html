@@ -33,7 +33,7 @@
 					
 		</ul>
 		<header class="banner">
-			<h1 class="site-name">curly Cheng</h1>
+			<p class="site-name">curly Cheng</p>
 			<ul class="links">
 				
 				<li><a href="/index.html">Blog</a></li>
@@ -82,10 +82,20 @@
 			}
 		}
 
-		window.onload = function() {
-			navIconToggle();
-			// setTargetBlank();
+		function addLoadEvent(func) {
+			var oldOnLoad = window.onload;
+			if (typeof oldOnLoad != "function") {
+				window.onload = func;
+			}
+			else {
+				window.onload = function() {
+					oldOnLoad();
+					func();
+				}
+			}
 		}
+		addLoadEvent(navIconToggle);
 	</script>
+	
 </body>
 </html>

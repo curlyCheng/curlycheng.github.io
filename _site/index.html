@@ -33,7 +33,7 @@
 					
 		</ul>
 		<header class="banner">
-			<h1 class="site-name">curly Cheng</h1>
+			<p class="site-name">curly Cheng</p>
 			<ul class="links">
 				
 				<li><a href="/index.html">Blog</a></li>
@@ -53,12 +53,27 @@
 	
 	<article>
 	<header>
-		<a href="/css/pic-css-box-model.html"><h2>图解CSS(一)——盒模型</h2></a>
+		<a href="/css/inline-element-model.html"><h2>图解CSS(二)——行内世界</h2></a>
+		<span class="post-date">2015.10.15</span>			
+	</header>
+	<div class="excerpt">
+		<blockquote>
+  <p>行内世界里生活着行内元素和匿名文本，CSS中的行内元素包括img,span,a,code,em,i等。行内世界也有自己的规则，行内世界里的成员按照这些规则确定自己的位置。这篇日志就来说说行内世界。</p>
+</blockquote>
+
+
+	</div>
+	<div class="hr"></div>
+</article>
+
+	<article>
+	<header>
+		<a href="/css/pic-css-box-model.html"><h2>图解CSS(一)——块级元素盒模型</h2></a>
 		<span class="post-date">2015.10.14</span>			
 	</header>
 	<div class="excerpt">
 		<blockquote>
-  <p>本文将介绍css盒模型</p>
+  <p>CSS2.1中的块级元素包括：div,ul,li,p,h1~h6,blockquote等。本文将介绍块级元素盒模型，主要是关于盒模型介绍、视觉格式化、定位元素放置的一些事情。</p>
 </blockquote>
 
 
@@ -130,10 +145,20 @@
 			}
 		}
 
-		window.onload = function() {
-			navIconToggle();
-			// setTargetBlank();
+		function addLoadEvent(func) {
+			var oldOnLoad = window.onload;
+			if (typeof oldOnLoad != "function") {
+				window.onload = func;
+			}
+			else {
+				window.onload = function() {
+					oldOnLoad();
+					func();
+				}
+			}
 		}
+		addLoadEvent(navIconToggle);
 	</script>
+	
 </body>
 </html>

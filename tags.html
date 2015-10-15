@@ -1,12 +1,23 @@
 ---
-layout: tl-mode
+layout: mode
+include: tag.js
 ---
-<div class="cate-nav tl">
+<div class="cate-nav">
 	<ul>
-		{% for tags in site.tags %}
-			{% for tag in tags[0] %}
-			<li><a href="#{{tag}}">{{tag | capitalize}}</a></li>
-			{% endfor %}
+		{% for tag in site.tags %}
+			<a href="#{{tag[0]}}" onclick="showPost(this);"><li>{{tag[0] | capitalize}}</li></a>
 		{% endfor %}
 	</ul>
 </div>
+{% for tag in site.tags %}
+<section id="#{{tag[0]}}" class="tag-posts">
+	<h2>
+		{{tag[0] | capitalize}}
+	</h2>
+	{% for post in tag[1] %} 
+		{% include excerpt.html %}
+	{% endfor %}
+</section>
+{% endfor %}	
+
+

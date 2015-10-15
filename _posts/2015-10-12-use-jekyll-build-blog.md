@@ -75,9 +75,20 @@ site.categories #=>获取站点所有分类目录
 cate in site.categories #=>cate是一个数组，cate[0]存放类目名，cate[1]存放类目下post对象。
 ```
 
-#### 标识
+#### 标签
 
-设定Yaml头信息Tags，多个Tags以数组形式设定，要实现标识检索功能可参考[在 Jekyll 里生成一个标签云 (Tag Cloud)](http://jekyll.bootcss.com/docs/resources/)
+设定Yaml头信息Tags，多个Tags以数组形式设定
+
+实现标签云的几种思路：
+
+1. 在一个页面中使用锚点，但达不到交互效果
+1. 使用插件，将生成的_site文件夹上传至github(github禁止使用插件)
+可参考[在 Jekyll 里生成一个标签云 (Tag Cloud)](http://jekyll.bootcss.com/docs/resources/)
+1. liquid生成各标签下文章列表，css设置隐藏，js实现点击标签显示文章列表的效果
+1. 使用ajax，请求数据。
+
+最终采用第三种实现方法，通过location.hash获取tag值再进一步控制相关文章显示，详细代码见
+[源代码](https://github.com/curlyCheng/curlycheng.github.io)，scripts/tag.js
 
 #### _config.yml
 
@@ -157,7 +168,7 @@ pygments根据语言产生不同的代码高亮效果，其实是通过对markdo
 
 **todo: 尝试引入sass，优化样式文件**。
 
-**todo: 添加tag检索功能**
+**<span style="text-decoration:line-through">todo: 添加tag检索功能</span>**
 
 **<span style="text-decoration:line-through">todo: 解决markdown样式优化,代码无法高亮问题</span>**
 

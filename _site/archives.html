@@ -33,7 +33,7 @@
 					
 		</ul>
 		<header class="banner">
-			<h1 class="site-name">curly Cheng</h1>
+			<p class="site-name">curly Cheng</p>
 			<ul class="links">
 				
 				<li><a href="/index.html">Blog</a></li>
@@ -68,7 +68,12 @@
 	
 	
 	
-			<li><span>Oct.14</span><a href="/css/pic-css-box-model.html">图解CSS(一)——盒模型</a></li>
+			<li><span>Oct.15</span><a href="/css/inline-element-model.html">图解CSS(二)——行内世界</a></li>
+	
+	
+	
+	
+			<li><span>Oct.14</span><a href="/css/pic-css-box-model.html">图解CSS(一)——块级元素盒模型</a></li>
 	
 	
 	
@@ -119,10 +124,20 @@
 			}
 		}
 
-		window.onload = function() {
-			navIconToggle();
-			// setTargetBlank();
+		function addLoadEvent(func) {
+			var oldOnLoad = window.onload;
+			if (typeof oldOnLoad != "function") {
+				window.onload = func;
+			}
+			else {
+				window.onload = function() {
+					oldOnLoad();
+					func();
+				}
+			}
 		}
+		addLoadEvent(navIconToggle);
 	</script>
+	
 </body>
 </html>

@@ -12,7 +12,7 @@ layout: mode
 	<div class="hr"></div>
 	<div class="footer">标签：
 		{% for tag in page.tags %}
-			<a href="" class="tag">{{tag}}</a>
+			<a href="/tags.html#{{tag}}" class="tag">{{tag | capitalize}}</a>
 		{% endfor %}
 	</div>
-</article>	
+</article>

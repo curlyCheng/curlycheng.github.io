@@ -61,6 +61,21 @@ li {
 .tl {
   text-align: left;
 }
+h1{
+  font-size: 2.3em;
+}
+h2{
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 1.125em;
+}
+h5 {
+  font-size: 1em;
+}
 
 /******************************************/
 /*    SideBar Style    */
@@ -107,6 +122,9 @@ li {
   bottom: 10px;
   padding: 50px 5%;
   word-wrap: break-word;
+}
+.banner .site-name {
+  font-weight: bold;
 }
 .banner .links li {
   display: inline;
@@ -266,21 +284,7 @@ article .body h6 {
   margin-top: 28px !important;
   margin-bottom: 14px !important;
 }
-article .body h1{
-  font-size: 2.3em;
-}
-article .body h2{
-  font-size: 1.5em;
-}
-article .body h3 {
-  font-size: 1.25em;
-}
-article .body h4 {
-  font-size: 1.125em;
-}
-article .body h5 {
-  font-size: 1em;
-}
+
 article .body pre {
   padding: 1em;
   border: 1px solid #ccc;
@@ -298,10 +302,11 @@ code {
 /******************************************/
 /*    List Style    */
 /******************************************/
+
 .cate-nav li {
   display: inline-block;
   padding: 10px;
-  background: #61C7E1;
+  background: #66CCCC;
   margin: 5px;
   margin-left: 0;
 }
@@ -360,6 +365,9 @@ code {
 .tag {
   display: inline-block;
   padding: 5px 10px;
-  background: #89C3C0;
+  background: #66CCCC;
   margin-left: 0;
+}
+.tag-posts {
+  display: none;
 }

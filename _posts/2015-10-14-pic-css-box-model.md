@@ -1,10 +1,10 @@
 ---
 layout: post
 category: CSS
-tags: [css, position, margin]
-title: 图解CSS(一)——盒模型
+tags: [position, margin, 居中]
+title: 图解CSS(一)——块级元素盒模型
 ---
-> 本文将介绍css盒模型
+> CSS2.1中的块级元素包括：div,ul,li,p,h1~h6,blockquote等。本文将介绍块级元素盒模型，主要是关于盒模型介绍、视觉格式化、定位元素放置的一些事情。
 
 * TOC
 {:toc}
@@ -69,8 +69,8 @@ right为auto，而width为特定值，则margin-left和margin-right平分剩余�
 > - height,margin属性可设置为auto
 - 如果正常流中一个块元素的margin-top或margin-bottom设置为auto，它会自动计算为0。
 - 如果一个块级正常流元素的height设置为一个百分数，这个值则是包含块height的一个百分数。
-- 如果块级正常流元素的高度设置为auto，而且只有块级子元素。其默认高度将是从最高块级子元素的边框到最低块级子元素边框之间的距离；如果块级元素有上内边距或下内边距，或者有上边框或下边框，其高度则是从其最高子元素的上外边距边界到其最低子元素的下外边距边界之间的距离
 - 如果设置margin-top，margin-bottom百分数，则是按包含块width计算margin值。
+- 如果块级正常流元素的高度设置为auto，而且只有块级子元素。其默认高度将是从最高块级子元素的边框到最低块级子元素边框之间的距离；如果块级元素有上内边距或下内边距，或者有上边框或下边框，其高度则是从其最高子元素的上外边距边界到其最低子元素的下外边距边界之间的距离
 
 <iframe style="width: 100%; height:300px" src="http://codepen.io/curlyCheng/embed/yYzNbW" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
@@ -90,10 +90,11 @@ right为auto，而width为特定值，则margin-left和margin-right平分剩余�
 ##### 垂直方向
 
 > - 垂直方向与水平方向相似，能设为auto的属性为height，top，bottom
-- 	
 
 <p data-height="464" data-theme-id="20013" data-slug-hash="vNeGxZ" data-default-tab="result" data-user="curlyCheng" class='codepen'>See the Pen <a href='http://codepen.io/curlyCheng/pen/vNeGxZ/'>vNeGxZ</a> by curlyCheng (<a href='http://codepen.io/curlyCheng'>@curlyCheng</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
  
+## 附录
 
-[块元素垂直居中的实现](http://douglasheriot.com/tutorials/css_vertical_centre/demo4.html)
+- 本文总结自《CSS权威指南》基本视觉格式化章节及浮动和定位章节
+- [块元素垂直居中的实现](http://douglasheriot.com/tutorials/css_vertical_centre/demo4.html)

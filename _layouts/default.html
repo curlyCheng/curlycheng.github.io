@@ -19,7 +19,7 @@
 			{% endfor %}		
 		</ul>
 		<header class="banner">
-			<h1 class="site-name">{{site.author}}</h1>
+			<p class="site-name">{{site.author}}</p>
 			<ul class="links">
 				{% for link in site.site-nav %}
 				<li><a href="{{link.url}}">{{link.text}}</a></li>
@@ -62,10 +62,20 @@
 			}
 		}
 
-		window.onload = function() {
-			navIconToggle();
-			// setTargetBlank();
+		function addLoadEvent(func) {
+			var oldOnLoad = window.onload;
+			if (typeof oldOnLoad != "function") {
+				window.onload = func;
+			}
+			else {
+				window.onload = function() {
+					oldOnLoad();
+					func();
+				}
+			}
 		}
+		addLoadEvent(navIconToggle);
 	</script>
+	{% if page.include %}<script src="/scripts/{{page.include}}"></script>{% endif %}
 </body>
 </html>
