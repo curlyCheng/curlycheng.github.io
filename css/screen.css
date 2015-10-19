@@ -53,7 +53,8 @@ li {
 .hr {
   width: 100%;
   border-bottom: 1px solid #ccc;
-  margin: 10px 0 50px;
+  margin: 50px auto;
+  max-width: 720px;
 }
 .underline {
   border-bottom: 1px solid #ccc;
@@ -306,7 +307,7 @@ code {
 .cate-nav li {
   display: inline-block;
   padding: 10px;
-  background: #66CCCC;
+  background: #99CCFF;
   margin: 5px;
   margin-left: 0;
 }
