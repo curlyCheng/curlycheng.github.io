@@ -56,6 +56,10 @@ li {
   margin: 50px auto;
   max-width: 720px;
 }
+.space {
+  width: 100%;
+  margin: 50px 0;
+}
 .underline {
   border-bottom: 1px solid #ccc;
 }
@@ -307,7 +311,7 @@ code {
 .cate-nav li {
   display: inline-block;
   padding: 10px;
-  background: #99CCFF;
+  background: #eee;
   margin: 5px;
   margin-left: 0;
 }
@@ -366,7 +370,6 @@ code {
 .tag {
   display: inline-block;
   padding: 5px 10px;
-  background: #66CCCC;
   margin-left: 0;
 }
 .tag-posts {
