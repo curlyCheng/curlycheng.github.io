@@ -4,11 +4,16 @@ title: python学习之小试爬虫
 tags: [python, study]
 category: Python
 ---
-> 以[知乎——如何入门 Python 爬虫？](http://www.zhihu.com/question/20899988)为入口，
-参考[Python爬虫入门教程](http://blog.csdn.net/column/details/why-bug.html)，[做一做爬虫闯关练习](http://www.heibanke.com/lesson/crawler_ex01/)，在urllib2基础上实现爬虫，用python弄点有趣的东西玩一玩
+> 尝试写入门爬虫，小试python这把牛刀。
 
 * TOC
 {:toc}
+
+## 启程
+
+以[知乎——如何入门 Python 爬虫？](http://www.zhihu.com/question/20899988)为入口，
+参考[Python爬虫入门教程](http://blog.csdn.net/column/details/why-bug.html)，[做一做爬虫闯关练习](http://www.heibanke.com/lesson/crawler_ex01/)，在urllib2基础上实现基本爬虫，cookielib实现post请求，试用Request模块，使用布隆过滤器做重复筛选。用python弄点有趣的东西玩一玩。
+
 
 ## 爬虫spider
 
@@ -186,3 +191,23 @@ if __name__ == '__main__':
 No matching distribution found for install
 ```这个错误，原因是从pip1.4版本开始，pip默认只安装PEP426标准版本，若一个模块未成为PEP426版本，则被认为是预发版本，在安装时需加上```--pre```标识```sudo pip install --pre requests``` 
 
+Request闪光的地方在于其“高级用法”，比如说调用session对象。
+
+## Bloom Filter
+
+[布隆过滤器(Bloom Filter)详解](http://www.cnblogs.com/haippy/archive/2012/07/13/2590351.html)
+在《数学之美》一书中对布隆过滤器有着间洁精要的介绍，随着集合中元素的增加，我们需要的存储空间越来越大，检索速度也越来越慢。不过世界上还有一种叫作散列表（又叫哈希表，Hash table）的数据结构。它可以通过一个Hash函数将一个元素映射成一个位阵列（Bit Array）中的一个点。这样一来，我们只要看看这个点是不是 1 就知道可以集合中有没有它了。在实施时我们需要一个m长的位数组代表位阵列；将url通过hash函数转换为n位字节，将位字节在位数组中对应的位置置为1。查询位字节对应的数组位置是否全为1判断，url是否已出现过。但是，存在一种十分不幸的情况，虽说位字节对应的数组位置为1，但是是由多个url结果构成的，也就是说其实url根本没有出现过。这也就是布隆过滤器的误差了，不过这一误差不会导致漏网之鱼，大不了一个url会多查几次。同时，我们可以设想，位数组足够大误差的概率就越小。
+
+误差概率约等于(0.6185)^(m/n)
+
+##### 在Python中的实现
+
+1. 可以直接使用bloomfilter模块
+	1. ```https://github.com/jaybaird/python-bloomfilter```，无需安装第三方模块直接，```python setup.py install``` 安装即可
+	2. ```https://github.com/axiak/pybloomfiltermmap```，需要安装Bitvector、VCforPython2.7等安装模块 
+2. 使用位数组+hash函数+增加方法+查询方法
+{% highlight bash %}
+位数组：bitarray/bitVector
+hash函数：murmur hash/cityhash/hvn hash
+在pypi中查询murmur hash相关的模块，结合python适用版本和更新时间，查询到mmh3模块最合适
+{% endhighlight %}

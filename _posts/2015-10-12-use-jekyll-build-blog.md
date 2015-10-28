@@ -32,8 +32,9 @@ jekyll官方引擎和github Pages使用的jekyll引擎在解析方面有一些�
 	gem install bundler #=>bundler是一个gem包管理工具，按照Gemfile内容管理应用需使用的包。
 	
 	# 在工作目录下建立一个Gemfile，写入gem 'github-pages'
+
 	
-	gem install github-pages #=>安装github-pages
+	gem install github-pages #=>安装github-pages，若出错可能是ruby版本不适合，亲证2.2.0版本可行
 
 	bundle exec jekyll serve #=>在bundler下运行jekyll
 

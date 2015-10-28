@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sublime使用记录手册
-category: Tools
+category: 开发工具
 tags: [tool]
 ---
 > 本文将记录我的sublime text3 的使用历程，持续更新。
@@ -27,8 +27,16 @@ tags: [tool]
 
 - SFTP： SFTP/FTP插件，结合ssh使用，服务器同步工具。可以设置保存代码的同时上传代码到服务器，从服务器拉东西也方便。
 
+- SublimePythonIDE：集成了Python补全提示，错误检查，代码高亮以及pep8检测。pep8可在用户配置中关闭。
+
 ##### 事务帮助
 
 - Evernote： 一直很在意evernote不支持markdown这件事，直到有一天在package control官网头上的框框里搜一搜evernote，终于发现了它，对笔记的增删改查都可在sublime里实现，还可以写markdown上传。完全满足需求。
 
 - Markdown Preview： 用markdown写东西在浏览器里看效果。
+
+## 配置
+
+##### Preferences
+
+ubuntu下的Preferences用户配置文件路径```~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings```
