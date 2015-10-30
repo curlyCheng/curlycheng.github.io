@@ -196,9 +196,7 @@ Request闪光的地方在于其“高级用法”，比如说调用session对象
 ## Bloom Filter
 
 [布隆过滤器(Bloom Filter)详解](http://www.cnblogs.com/haippy/archive/2012/07/13/2590351.html)
-在《数学之美》一书中对布隆过滤器有着间洁精要的介绍，随着集合中元素的增加，我们需要的存储空间越来越大，检索速度也越来越慢。不过世界上还有一种叫作散列表（又叫哈希表，Hash table）的数据结构。它可以通过一个Hash函数将一个元素映射成一个位阵列（Bit Array）中的一个点。这样一来，我们只要看看这个点是不是 1 就知道可以集合中有没有它了。在实施时我们需要一个m长的位数组代表位阵列；将url通过hash函数转换为n位字节，将位字节在位数组中对应的位置置为1。查询位字节对应的数组位置是否全为1判断，url是否已出现过。但是，存在一种十分不幸的情况，虽说位字节对应的数组位置为1，但是是由多个url结果构成的，也就是说其实url根本没有出现过。这也就是布隆过滤器的误差了，不过这一误差不会导致漏网之鱼，大不了一个url会多查几次。同时，我们可以设想，位数组足够大误差的概率就越小。
-
-误差概率约等于(0.6185)^(m/n)
+在《数学之美》一书中对布隆过滤器有着间洁精要的介绍，随着集合中元素的增加，我们需要的存储空间越来越大，检索速度也越来越慢。不过世界上还有一种叫作散列表（又叫哈希表，Hash table）的数据结构。它可以通过一个Hash函数将一个元素映射成一个位阵列（Bit Array）中的一个点。这样一来，我们只要看看这个点是不是 1 就知道可以集合中有没有它了。在实施时我们需要一个m长的位数组代表位阵列；将url通过hash函数转换为位字节，将位字节在位数组中对应的位置置为1。查询位字节对应的数组位置是否全为1判断，url是否已出现过。但是，存在一种十分不幸的情况，虽说位字节对应的数组位置为1，但是是由多个url结果构成的，也就是说其实url根本没有出现过。这也就是布隆过滤器的误差了，不过这一误差不会导致漏网之鱼，大不了一个url会多查几次。同时，我们可以设想，位数组足够大误差的概率就越小。
 
 ##### 在Python中的实现
 
@@ -209,5 +207,30 @@ Request闪光的地方在于其“高级用法”，比如说调用session对象
 {% highlight bash %}
 位数组：bitarray/bitVector
 hash函数：murmur hash/cityhash/hvn hash
-在pypi中查询murmur hash相关的模块，结合python适用版本和更新时间，查询到mmh3模块最合适
+在pypi中查询murmur hash相关的模块，结合python适用版本和更新时间，查询到[mmh3](https://pypi.python.org/pypi/mmh3/2.3.1)模块最合适
 {% endhighlight %}
+
+{% highlight python %}
+import mmh3
+from bitarray import bitarray
+
+class BloomFilter(object):
+	"""docstring for BloomFilter"""
+	def __init__(self, size, elem_count):
+		self.hash_count = int(0.7*(size/elem_count))
+		self.bit_arr = bitarray(size)
+		self.bit_arr.setall(0)
+		self.size = size
+		print "%0.20f%%" %0.6185**(size/elem_count)
+	def add(self, elem):
+		for x in xrange(self.hash_count):
+			index = mmh3.hash(elem, x) % self.size
+			self.bit_arr[index] = 1
+	def in_bf(self, elem):
+		for x in xrange(self.hash_count):
+			index = mmh3.hash(elem, x) % self.size
+			if (self.bit_arr[index] == 0):
+				return False
+		return True
+{% endhighlight %}
+

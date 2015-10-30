@@ -105,7 +105,9 @@ sudo apt-get -f install
 参考[知乎专栏mac talk-oh-my-zsh](http://zhuanlan.zhihu.com/mactalk/19556676)
 > 配置opendir ```vi ~/.bashrc```，加入```alias opendir='nautilus'```
 
-##### 没有google不能啊，没钱养vpn，那就屌丝地改host吧
+##### host修改
+
+没钱养vpn，那就屌丝地改host吧
 
 ```sudo gedit /etc/hosts```
 [Google 可用Hosts永久更新站](http://igge.gq/)
@@ -125,3 +127,5 @@ sudo apt-get install build-essential libgtk2.0-dev
 1. [nodejs安装](/node/node-js-env-build.html)
 1. [Android Studio安装](http://www.ray-world.com/?p=618)，[更新镜像服务](http://tools.android-studio.org/)，[SDK下载](http://tools.android-studio.org/index.php/sdk)
 1. git：```sudo apt-get update && sudo apt-get install git```
+
+1. mysql [中文乱码解决](http://blog.csdn.net/zht666/article/details/8783396)

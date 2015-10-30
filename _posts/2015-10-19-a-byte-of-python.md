@@ -46,6 +46,15 @@ set: {1,2,3}，不可变，键的集合，不存值
 
 序列特征: 索引和切片，典型序列：list、tuple、string
  
+enumerate函数可以把一个list变成索引-元素对
+{% highlight python %}
+>>> for i, value in enumerate(['A', 'B', 'C']):
+...     print(i, value)
+...
+0 A
+1 B
+2 C
+{% endhighlight %}
 
 ## 实现类，继承，实例化，多态：
 
