@@ -94,9 +94,6 @@ if __name__ == "__main__":
 
 ### queue使用
 
-在消息队列通信时会遇见t.setDaemon(true),queue.join()以及queue.task_done()，其意义如下：
-t.setDaemon()，将主线程设置为守护线程
-
 > 在主线程中使用了 queue.join()，导致主线程阻塞。queue.task_done() 表示完成一个 task，并递减没有完成的队列数，当队列全部完成时候，没有task可执行，因此需要发送一个信号，通知被阻塞的主线程，继续运行。
 作者：cleverdeng
 链接：http://www.zhihu.com/question/20218924/answer/14379770

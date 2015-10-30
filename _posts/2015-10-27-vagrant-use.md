@@ -33,7 +33,6 @@ tags: [tool,记录小册]
 
 5. ```vagrant ssh```
 以ssh登录虚拟环境，OK，已进入box，之后就可以通过终端在你的虚拟环境里为所欲为了。。。（没有ui界面）
-![屏幕快照 2015-08-19 上午9.33.23.png](http://upload-images.jianshu.io/upload_images/313526-88d4eca81a059b34.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 6. ```vagrant halt```
 挂起，顾名思义，关闭当前虚拟环境

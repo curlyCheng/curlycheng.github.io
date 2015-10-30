@@ -4,6 +4,7 @@ title: ubuntu安装与配置小册
 category: Linux
 tags: [tool,linux]
 ---
+
 > 迁移来之前记录的ubuntu安装、配置文章，方便更新。
 
 * TOC
@@ -11,6 +12,7 @@ tags: [tool,linux]
 
 安装相关
 ---
+
 #####  卸载ubuntu
 [Win7与Ubuntu双系统时卸载Ubuntu的方法--linux公社](http://www.linuxidc.com/Linux/2010-03/25129.htm)
 MBRFix+分区删除卷
@@ -18,14 +20,11 @@ MBRFix+分区删除卷
 ##### 硬盘安装ubuntu
 [Ubuntu 14.04 下载、安装、配置 整理汇总--linux公社](http://www.linuxidc.com/Linux/2014-04/100370.htm)
 安装需注意：
+
 >  1. vmlinuz这个文件，在64位iso里叫vmlinuz.efi，使用时把后缀去掉。
-
 2. 用EasyBCD配置引导文件时，注意64位Win 7采用的是GPT分区表，所以，C盘不是(hd0,0)而是(hd0,1)——前提是你只有一块硬盘或你把Win7装在了主硬盘上，如果是装在了第二块硬盘上，那么C盘是(hd1,1)，是1而不是0的原因：GPT分区表默认隐藏了一个系统保留分区，100M，所以你的C盘不在0区而在1区。
-
 3. 64位Win7还会带来另一个问题，就是GPT分区的签名，如果不做任何处理，按照1+2两点你可以登入Ubuntu的体验版，但是通过桌面安装时，会发现在分区时无法识别你的Win7分区。所以还需要打开桌面安装前，打开终端，输入一行命令：
-
 sudo dd if=/dev/zero of=/dev/sda bs=1 count=8 seek=512
-
 目的是消除GPT分区表签名。
 
 ##### 网卡问题

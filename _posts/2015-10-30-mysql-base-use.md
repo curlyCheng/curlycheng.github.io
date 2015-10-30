@@ -4,6 +4,9 @@ title: SQL实例记录
 tags: [数据库, sql]
 category: Database
 ---
+
+> 记录每天的数据库练习
+
 #### 按日期统计一天赛事胜负场次
 
 表内容：
