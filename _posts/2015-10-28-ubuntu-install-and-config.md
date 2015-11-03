@@ -127,4 +127,4 @@ sudo apt-get install build-essential libgtk2.0-dev
 1. [Android Studio安装](http://www.ray-world.com/?p=618)，[更新镜像服务](http://tools.android-studio.org/)，[SDK下载](http://tools.android-studio.org/index.php/sdk)
 1. git：```sudo apt-get update && sudo apt-get install git```
 
-1. mysql [中文乱码解决](http://blog.csdn.net/zht666/article/details/8783396)
+1. mysql [中文乱码解决](http://blog.csdn.net/typ0520/article/details/8236238)
