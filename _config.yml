@@ -39,7 +39,7 @@ site-nav:
   - text: Blog
     url: /index.html
   - text: Paint 
-    url: /paint.html
+    url: /curly_paint
   - text: Write
     url: /write.html
   - text: About
