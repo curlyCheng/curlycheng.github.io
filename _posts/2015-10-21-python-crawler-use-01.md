@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python学习之小试爬虫
+title: python爬虫之小试爬虫
 tags: [python, study]
 category: Python
 ---

@@ -33,7 +33,6 @@ a {
   color: #007998;
 }
 
-
 a:visited {
   color: #007998;
 }
@@ -49,6 +48,12 @@ ul {
 }
 li {
   list-style: none;
+}
+hr {
+  border: 0;
+  border-bottom: 1px dashed #cfcfcf;
+  margin: 30px 0;
+
 }
 .hr {
   width: 100%;
@@ -209,9 +214,9 @@ article .body{
   word-break: break-word;
   text-align: justify;
 }
-article .body > * {
+/*article .body > * {
   margin-bottom: 24px;
-}
+}*/
 article .body a {
   text-decoration: none;
   color: #3b80b1;
@@ -360,6 +365,7 @@ code {
   font-size: 30px;
   font-weight: bold;
   display: none;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   #nav-icon {

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python学习之左右开弓
+title: python爬虫之左右开弓
 tags: [python, study]
 category: Python
 ---
