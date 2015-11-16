@@ -50,7 +50,7 @@ instanceof根据原型链判断“继承”关系，但原始类型较特殊
 	x = new Date();
 	x instanceof Date; // True
 		/*左值为变量，右值为构造函数*/
-	Date.prototype，，.isPrototypeOf(x)
+	Date.prototype.isPrototypeOf(x)
 ```
 
 #### 变量声明提前
@@ -160,11 +160,19 @@ Object.defineProperty(Object.prototype, "extend", {
 
 构造函数调用创建一个新的空对象，这个对象继承自构造函数的prototype属性。
 
+#### 作为命名空间
+定义一个匿名函数并立即调用
+{% highlight javascript %}
+(function(){
+	//...body
+}());
+{% endhighlight %}
+
 #### 参数
 
 当调用函数的时候传入的实参比函数声明时指定的形参个数要少，剩下的形参都将设置为undefined值。
 
-标识符arguments是指向实参对象的引用，实参对象是一个类数组对象。修改实参数组的元素同样会修改实参的值。arguments有callee和caller两个方法。
+标识符arguments是指向实参对象的引用，实参对象是一个类数组对象。修改实参数组的元素同样会修改实参的值。
 
 #### 作用域链
 
@@ -173,23 +181,84 @@ js中没有块作用域的概念，顶替之的是函数作用域，每一个函
 作用域链是一个对象链，链中的对象包裹着函数的参数以及局部变量。在调用函数时，创建一个新的作用域链以供调用查询。
 
 #### 闭包
+> 函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为“闭包”
 
 函数的执行依赖于变量作用域，这个作用域是在函数定义时决定的，而不是函数调用时决定的
 
 {% highlight javascript %}
-function bind(f,o){
-if(f.bind)return f.bind(o);//如果bind()方法存在的话，使用bind()方法
-else return function(){//否则，这样绑定
-return f.apply(o,arguments);
+// 独立作用域链
+function sum1 (elem) {
+	var count = 0;
+	return function(){
+		count+=elem;
+		return count
+	}
+}
+var func1 = [];
+for (var i = 0; i < 10 ; i++) {
+	func1[i] = sum1(i)
 };
+console.log(func1[5]())
+
+// 闭包在函数体内，共享sum函数中变量
+function sum2 () {
+	var count = 0;
+	var func = [];
+	for (var i = 0; i < 10; i++) {
+		func[i] = function() {
+			count += i;
+			return count;	
+		}
+	}
+	return func;
 }
 
-{% endhighlight %}
+var funcs2 = sum2()
+console.log(funcs2[5]())
 
+function sum3 () {
+	var count = 0;
+	var func = [];
+	for (var i = 0; i < 10; i++) {
+		count += i;
+		func[i] = count
+	};
+	return func;
+}
+var funcs3 = sum3();
+console.log(funcs3[5])
+{% endhighlight %}
 
 #### this
 
-this 是一个关键字，若是通过方法调用，this指向调用方法的对象；若是函数调用，this不是全局变量就是undefined
+this 是一个关键字，若是通过方法调用，this指向调用方法的对象；若是函数调用，this不是全局变量就是undefined。在嵌套函数中想要使用父函数的上下文，需在父函数中将this赋值给一个变量```var self = this```
+
+#### arguments
+
+```arguments.length```实参个数
+```arguments.callee.length```形参个数
+```arguments.callee```表示函数自身
+```function.caller```，```arguments.callee.caller``` 表示函数的调用者
+
+#### call&&apply
+call:```f.call(o,1,2)```
+参数：context,arguments
+apply:```f.apply(o,[1,2])```
+参数：context,数组或类数组
+
+context为null或undefined时，默认为全局对象
+
+{% highlight javascript %}
+function bind(f,o){
+	if(f.bind)return f.bind(o);//如果bind()方法存在的话，使用bind()方法
+	else return function(){//否则，这样绑定
+		return f.apply(o,arguments);
+	};
+}
+{% endhighlight %}
+
+#### 函数式编程
+
 
 
 ---
@@ -253,4 +322,41 @@ arr[1]
 > true
 1 in arr
 > false
+{% endhighlight %}
+
+#### 数组方法
+{% highlight javascript %}
+	a = ['4','2','3']
+	console.log(a)
+	a.join('-') //返回字符串
+	console.log('join:'+a)
+	a.reverse()	//颠倒a，a变
+	console.log('reverse:'+a)
+	a.sort()	//排序a，a变
+	console.log('sort:'+a)
+	a.slice(0,1)	//切片，a不变
+	console.log('slice:'+a)
+	a.splice(1,3)	//删除某一部分，a变
+	console.log('splice:'+a)
+	a.push('5')	//尾加，a变
+	console.log('push:'+a)
+	a.unshift(3,1,2)	//头加，a变
+	console.log('unshift:'+a)
+	console.log(a.toString())	//字符串显示，a不变
+	console.log('toString:'+a)
+	a.forEach(function(v,i,a){	//每个元素调用，a可变，返回undefined
+		if ( i != 0 ) {
+			a[i] = a[i-1] + parseInt(v) 
+		}
+	})
+	console.log('forEach:'+a)
+	b = a.map(function(x,i){return i != 0?x+a[i-1]:x})	//每个元素调用，返回结果数组
+	console.log('map:'+b)
+	delete a[0]
+	a = a.filter(function(){return true})	//筛选，为true的保留，可用于去除数组中的undefined元素
+	console.log('filter:'+a)
+	console.log('every:'+a.every(function(x){return x>4})) //所有都符合条件返回true
+	sum = a.reduce(function(x,y){return x+y});	//合并操作，求和求积或最大值
+	console.log('reduce:'+sum)
+	console.log('indexOf:'+a.indexOf('4'))
 {% endhighlight %}
