@@ -2,3 +2,4 @@
 _site
 *.lock
 Gemfile
+/_posts/*.html

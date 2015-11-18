@@ -167,7 +167,7 @@ pygments根据语言产生不同的代码高亮效果，其实是通过对markdo
 
 在写样式文件时，发现无法书写父子样式，无法统一处理颜色，对开发效率有影响。不得不感慨到sass，less预处理工具的人性化和易维护。
 
-**todo: 尝试引入sass，优化样式文件**。
+**<span style="text-decoration:line-through">todo: 尝试引入sass，优化样式文件</span>**
 
 **<span style="text-decoration:line-through">todo: 添加tag检索功能</span>**
 

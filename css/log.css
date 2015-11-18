@@ -1,0 +1,36 @@
+body {
+	font: 16px Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #eee;
+}
+article {
+	box-sizing: border-box;
+	margin: 20px auto;
+	width: auto;
+	padding: 20px 30px;
+	border: 1px solid #dfdfdf;
+	border-radius: 10px;
+	background: #fff;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	width: 90%;
+	max-width: 720px;
+}
+h2 {
+	margin: 0 0 10px 0;
+	font-size: 1.2em;
+	color: #888;
+	font-weight: normal;
+}
+p {
+	color: #333;
+	margin: 0;
+}
+hr {
+	border: 0;
+	border-top: 1px solid #dedede;
+	width: auto;
+	margin: 20px 10px;
+}

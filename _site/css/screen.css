@@ -183,6 +183,11 @@ h5 {
 }
 
 /**Post**/
+article {
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 article header a {
   text-decoration: none;
 }

@@ -40,8 +40,8 @@ site-nav:
     url: /index.html
   - text: Paint 
     url: /curly_paint
-  - text: Write
-    url: /write.html
+  - text: Log
+    url: /log.html
   - text: About
     url: /about.html
 
