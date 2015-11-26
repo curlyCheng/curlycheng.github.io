@@ -124,7 +124,8 @@ sudo apt-get install build-essential libgtk2.0-dev
 ```
 ->加个[evernote-markdown](https://packagecontrol.io/packages/Evernote)
 1. [nodejs安装](/node/node-js-env-build.html)
-1. [Android Studio安装](http://www.ray-world.com/?p=618)，[更新镜像服务](http://tools.android-studio.org/)，[SDK下载](http://tools.android-studio.org/index.php/sdk)
+1. [Android Studio安装](http://www.ray-world.com/?p=618)直接安装IDE不用配置gradle，[更新镜像服务](http://tools.android-studio.org/)，[SDK下载](http://tools.android-studio.org/index.php/sdk)
+1. genymotion安装，需要先安装vitrualbox，[genymotion官网下载](https://www.genymotion.com/#!/download)，安装后生成模拟器。在Android Studio中选择File->Setting->Plugins->Browse repositories（在线安装）查找genymotion安装插件，之后点击菜单栏图标配置genymotion路径即可。
 1. git：```sudo apt-get update && sudo apt-get install git```
 
 1. mysql [中文乱码解决](http://blog.csdn.net/typ0520/article/details/8236238)

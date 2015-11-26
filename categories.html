@@ -5,12 +5,18 @@ title: Category
 <div class="cate-nav tl">
 	<ul>
 		{% for cate in site.categories %}
+		{% if cate[0] == 'za' %}
+		{% continue %}
+		{% endif %}
 		<li><a href="#{{cate[0]}}">{{cate[0] | upcase}}</a></li>
 		{% endfor %}
 	</ul>
 </div>
 <div class="post-list tl">
 	{% for cate in site.categories %}
+	{% if cate[0] == 'za' %}
+	{% continue %}
+	{% endif %}
 	<section>
 		<h2 class="cate-title" id="{{cate[0]}}">{{cate[0] | upcase}}</h2>
 		<ul>	

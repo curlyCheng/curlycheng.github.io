@@ -18,6 +18,9 @@ title: Archives
 		<h2 class="cate-title" id="{{year}}">{{year}}</h2>
 		<ul>
 	{% for post in site.posts %}
+	{% if post.category == 'za' %}
+	{% continue %}
+	{% endif %}
 	{% assign post-year = post.date | date: '%Y' %}
 	{% if year != post-year %}
 	{% assign year = post-year %}

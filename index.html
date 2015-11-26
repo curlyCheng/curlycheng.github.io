@@ -3,5 +3,8 @@ layout: mode
 title: curlyCheng's blog
 ---
 {% for post in site.posts %}
+	{% if post.category == 'za' %}
+	{% continue %}
+	{% endif %}
 	{% include excerpt.html %}
 {% endfor %}

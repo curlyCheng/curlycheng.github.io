@@ -8,6 +8,22 @@
 </head>
 <body>
 	<article>
+	<h1>杂谈一二</h1>
+	<hr>
+		{% for post in site.posts %}
+		{% if post.category == 'za' %}
+		<section class="clearfix">
+		<h2>{{ post.date | date: "%Y.%m.%d" }}</h2>			
+		{{post.excerpt}}
+		<a href="{{post.url}}" class="look-for">查看全文</a>
+		</section>
+		<hr>
+		{% endif %}
+		{% endfor %}
+	</article>
+	<article>
+	<h1>LOG</h1>
+	<hr>
 		{{content}}
 	</article>
 </body>

@@ -17,6 +17,13 @@ article {
 	word-break: break-all;
 	width: 90%;
 	max-width: 720px;
+	color: #333;
+}
+h1 {
+	margin: 0 0 15px 0;
+	color: #272F38;
+	font-size: 1.5em;
+	font-weight: normal;
 }
 h2 {
 	margin: 0 0 10px 0;
@@ -25,8 +32,10 @@ h2 {
 	font-weight: normal;
 }
 p {
+	text-align: justify;
 	color: #333;
 	margin: 0;
+	line-height: 1.5;
 }
 hr {
 	border: 0;
@@ -34,3 +43,17 @@ hr {
 	width: auto;
 	margin: 20px 10px;
 }
+a {
+	text-decoration: none;
+	color: #37AF43;
+}
+a.look-for {
+	color: #888;
+	float: right;
+}
+.clearfix {
+	overflow: auto;
+	_height: 1%;
+}
+
+
